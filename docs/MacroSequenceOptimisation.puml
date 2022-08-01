@@ -1,0 +1,20 @@
+@startuml
+
+actor       administrator    as administrator
+participant NewOptimisationService as OptimisationController
+database    bd    as bd
+
+
+administrator -> OptimisationController : 1: Request the shortest path
+OptimisationController -> OptimisationController : 2: Generate the shortest path
+
+OptimisationController --> administrator : 3: Return the shortest path
+administrator -> OptimisationController : 4: Validate the shortest path
+OptimisationController -> bd : 5: Persist in database
+
+
+
+
+
+
+@enduml

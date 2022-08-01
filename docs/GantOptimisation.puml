@@ -1,0 +1,35 @@
+@startgantt
+language fr
+saturday are closed
+sunday are closed
+
+Project starts 2022-07-08
+
+[Analyse existant] lasts 5 days
+[Modélisation probléme] lasts 6 days
+[Choix algo] lasts 6 days
+
+[Developpement de l'algorithme] lasts 10 days
+[Validation] lasts 4 days
+[Impl webservice] lasts 4 days
+[Implementation front] lasts 8 days
+
+
+
+
+[Analyse de l'existant] starts 2022-07-08
+[Modélisation probléme] starts 2022-07-15
+[Choix algo] starts 2022-07-22
+[Developpement de l'algorithme] starts 2022-07-29
+[Impl webservice] starts 2022-08-17
+[Validation] starts at [Developpement de l'algorithme]'s end
+
+[Implementation front] starts 2022-08-23
+
+
+
+
+[Validation] is colored in greenYellow
+
+
+@endgantt

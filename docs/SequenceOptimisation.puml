@@ -1,0 +1,26 @@
+@startuml
+
+actor       administrator    as administrator
+box "Kapisoft's application"
+participant ExistentApp       as foo
+participant NewOptimisationService as OptimisationController
+end box
+participant DistanceApi       as DistanceApi
+database    bd    as bd
+
+administrator -> foo : 1: Affect areas to the commercial agent
+foo --> administrator : 2: Return all the clients of the areas selected
+administrator -> foo : 3: Select clients + Assign a priority + timeWindow to each customer
+foo -> OptimisationController : 4: Request the shortest path
+OptimisationController -> DistanceApi : 5: Request the reel distance between clients
+DistanceApi --> OptimisationController: 6: Return distance
+OptimisationController -> OptimisationController : 7: Generate the distance Matrix of the tour
+OptimisationController -> OptimisationController : 8: apply the appropriate algorithm...
+OptimisationController --> foo : 9: Return the shortest path found ...
+foo --> administrator : 10: Display clients by order
+administrator -> foo : 11: button <<Confirm>>
+foo -> OptimisationController : 12:
+OptimisationController -> bd : 13: persist the tour in the database
+
+
+@enduml
